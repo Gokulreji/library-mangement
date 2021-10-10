@@ -1,0 +1,16 @@
+{% extends 'index1.html' %}
+{% block content %}
+{% for book in books %}
+<form action="/delete/{{book.id}}">
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Name:- {{book.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">No:{{book.number}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted" >price{{book.price}}</h6>
+      <button type="submit" class="btn btn-danger">Delete</button>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+</form>
+  {% endfor %}
+{% endblock content %}

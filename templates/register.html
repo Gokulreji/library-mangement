@@ -1,0 +1,35 @@
+
+{% extends 'index.html' %}
+{% block content %}
+<form action="/reg/" method="post">
+  {% csrf_token %}
+    {% for message in messages %}
+        <p style="color:red"><script>alert('{{message}}') </script></p>
+    {% endfor %}
+<div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" >
+  <label for="floatingInput">Email address</label>
+</div>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" placeholder="name" name="name">
+  <label for="floatingInput">Name</label>
+</div>
+<div class="form-floating mb-3">
+  <input type="number" class="form-control" id="floatingInput" placeholder="54644" name="phone">
+  <label for="floatingInput">phone</label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+  <label for="floatingPassword">Password</label>
+  <br>
+  </div>
+  
+  <input type="password" class="form-control" id="second" placeholder="password2" name="password2">
+
+  <div class="d-grid gap-2 d-md-block">
+   <button class="btn btn-primary" type="submit">Register</button>
+  </div>
+</div>
+</form>
+    
+{% endblock content %}

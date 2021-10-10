@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+{% for book in books %}
+<div class="card" style="width: 18rem; margin-top: 10px;">
+    <div class="card-body">
+      <h5 class="card-title">Name:- {{book.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">No:{{book.number}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted" >price{{book.price}}</h6>
+    
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock content %}
